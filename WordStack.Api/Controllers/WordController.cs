@@ -26,7 +26,7 @@ namespace WordStack.Api.Controllers
         [HttpGet("{typeId}")]
         public async Task<IEnumerable<Word>> Get(int typeId)
         {
-            return await _context.Words.Where(x => x.WordTypeId == typeId).ToListAsync();
+            return await _context.Words.Where(x => x.WordTypeId == typeId).OrderBy(x => x.StringValue).ToListAsync();
         }
     }
 }
