@@ -21,7 +21,7 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/WordStack.Api" -f  "Dockerfile" -t rabiek.azurecr.io/wordstackapi-img:${{ github.sha }}
+        docker build "$GITHUB_WORKSPACE" -f  "Dockerfile" -t rabiek.azurecr.io/wordstackapi-img:${{ github.sha }}
         docker push rabiek.azurecr.io/wordstackapi-img:${{ github.sha }}
 
     - name: Set Web App ACR authentication
