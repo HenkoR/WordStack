@@ -9,5 +9,8 @@ namespace WordStack.Api.Data.Models
     {
         public int Id { get; set; }
         public string StringValue { get; set; }
+        
+        public int WordTypeId { get; set; }
+        public WordType WordType { get; set; } 
     }
 }
